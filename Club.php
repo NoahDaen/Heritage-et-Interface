@@ -2,7 +2,6 @@
 
 class Club implements Comparable
 {
-
     private int $idClub;
     private string $nomClub;
     private int $nbPoints;
@@ -12,7 +11,6 @@ class Club implements Comparable
      * @param int $idClub
      * @param string $nomClub
      * @param int $nbPoints
-     * @param array $lesSports
      */
     public function __construct(int $idClub, string $nomClub, int $nbPoints)
     {
@@ -44,7 +42,10 @@ class Club implements Comparable
     {
         return $this->nbPoints;
     }
-
+    public function AjouterSport(Sport $sport)
+    {
+        $this->lesSports = $sport;
+    }
     /**
      * @return array
      */
@@ -53,10 +54,7 @@ class Club implements Comparable
         return $this->lesSports;
     }
 
-    public function AjouterSport(Sport $sport)
-    {
-        $this->lesSports = $sport;
-    }
+
 
     public function compareTo()
     {

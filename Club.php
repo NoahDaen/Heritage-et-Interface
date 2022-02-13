@@ -5,7 +5,7 @@ class Club implements Comparable
     private int $idClub;
     private string $nomClub;
     private int $nbPoints;
-    public $lesSports = array();
+    private $lesSports = array();
 
     /**
      * @param int $idClub

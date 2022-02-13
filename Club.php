@@ -5,7 +5,7 @@ class Club implements Comparable
     private int $idClub;
     private string $nomClub;
     private int $nbPoints;
-    private $lesSports = array();
+    public $lesSports = array();
 
     /**
      * @param int $idClub
@@ -44,7 +44,7 @@ class Club implements Comparable
     }
     public function AjouterSport(Sport $sport)
     {
-        $this->lesSports = $sport;
+        $this->lesSports[] = $sport;
     }
     /**
      * @return array
@@ -56,7 +56,7 @@ class Club implements Comparable
 
 
 
-    public function compareTo()
+    public function compareTo(Club $leClub)
     {
         // TODO: Implement compareTo() method.
     }

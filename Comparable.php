@@ -2,5 +2,5 @@
 
 interface Comparable
 {
-    public function compareTo();
+    public function compareTo(Club $unClub);
 }

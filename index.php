@@ -32,7 +32,7 @@ $club[2]->AjouterSport($sportRelais1);
 
 // Les sports Nantes
 $sport3 = new Sport("Cyclisme", 1);
-$sportBallon3 = new SportBallon("FootBall", 11, 68, 105);
+$sportBallon3 = new SportBallon("Football", 11, 68, 105);
 $sportBallon4 = new SportBallon("Rugby", 15, 65, 115);
 $sportRelais2 = new SportRelais("100m", 100, 1);
 $club[3]->AjouterSport($sport3);
@@ -41,20 +41,37 @@ $club[3]->AjouterSport($sportBallon4);
 $club[3]->AjouterSport($sportRelais2);
 
 
-echo '<h2>LISTE DES CLUBS<h2> <a href="index.php">Accueil</a><br>
-      <a href="index.php?id=1">1-Dijon 63</a><br>
-      <a href="index.php?id=2">2-PSG 67</a><br>
-      <a href="index.php?id=3">3-Nantes 65</a><br>';
+
+echo '<h2>LISTE DES CLUBS</h2> <a href="index.php">Accueil</a><br>';
+echo '<a href="index.php?id=1">1-Dijon 63</a><br>';
+echo '<a href="index.php?id=2">2-PSG 67</a><br>';
+echo '<a href="index.php?id=3">3-Nantes 65</a><br>';
 
 if ($_GET['id'] == 1)
 {
-    echo '<br>Liste des sports de Dijon';
+    echo '<h2>Liste des sports de '.$club[$_GET['id']]->getNomClub().'</h2>';
+    $sp1 = array();
+    $sp1 = $club[$_GET['id']]->getLesSports();
+    foreach ($sp1 as $keySp1 => $valueSp1)
+    {
+        echo $valueSp1->getDescription();
+    }
 }
 if ($_GET['id'] == 2)
 {
-    echo '<br>Liste des sports du PSG';
+    echo '<h2>Liste des sports de '.$club[$_GET['id']]->getNomClub().'</h2>';
+    $sp2 = array();
+    $sp2 = $club[$_GET['id']]->getLesSports();
+    foreach ($sp2 as $keySp2 => $valueSp2)
+    {
+        echo $valueSp2->getDescription();
+    }
 }
-if ($_GET['id'] == 3)
-{
-    echo '<br>Liste des sports de Nantes';
+if ($_GET['id'] == 3) {
+    echo '<h2>Liste des sports de ' . $club[$_GET['id']]->getNomClub() . '</h2>';
+    $sp3 = array();
+    $sp3 = $club[$_GET['id']]->getLesSports();
+    foreach ($sp3 as $keySp3 => $valueSp3) {
+        echo $valueSp3->getDescription();
+    }
 }

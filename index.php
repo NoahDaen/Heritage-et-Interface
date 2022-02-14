@@ -42,7 +42,7 @@ $club[3]->AjouterSport($sportRelais2);
 
 echo '<h2>LISTE DES CLUBS</h2><a href=index.php> Accueil</a><br>';
 foreach ($club as $keyClub => $valueClub){
-    echo "<a href=index.php?id={$keyClub}>{$valueClub->getNomClub()}</a><br>";
+    echo "<a href=index.php?id={$keyClub}>{$keyClub} - {$valueClub->getNomClub()} {$valueClub->getNbPoints()}</a><br>";
 }
 if (isset($_GET['id'])) {
     echo '<h2>Liste des sports de '.$club[$_GET['id']]->getNomClub().'</h2>';

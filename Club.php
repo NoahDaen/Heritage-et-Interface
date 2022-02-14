@@ -54,8 +54,6 @@ class Club implements Comparable
         return $this->lesSports;
     }
 
-
-
     public function compareTo(Club $leClub)
     {
         // TODO: Implement compareTo() method.
